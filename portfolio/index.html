@@ -1,5 +1,148 @@
 <html>
+<head>
+
+<meta name="robots" content="noindex" />
+
+<style>
+
+body {
+  font-family: Trebuchet, "trebuchet ms", Tahoma, Helvetica, Verdana, sans-serif;
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+</style>
+
+</head>  
   
-  hello
-  
+<body>
+
+
+<div class="job">
+<h2>With Omron/Adept MobileRobots</h2>
+
+<p>Until 2018, MobileRobots was a business unit of <a href="https://automation.omron.com/en/us/products/category/robotics">Omron Automation</a> (previously owned by <a href="https://en.wikipedia.org/wiki/Omron_Adept">Adept Technology</a>) specializing in providing hardware and software platforms
+used for education and advanced research in mobile robotics.    An archive of the website featuring photos and information on the products
+is availabe via <a href="https://web.archive.org/web/20171221114232/http://www.mobilerobots.com/Mobile_Robots.aspx">The Internet Archive</a>.
+Customizable systems were sold to research universities, institutes, government agencies and private enterprises around the world, and provided
+with comprehensive software libraries and highly regarded personalized customer support. 
+</p>
+
+<div class="project">
+<h3>ARIA</h3>
+
+<p>ARIA
+
+<p>After the closure of MobileRobots, I made various improvements to the ARIA open source (GPL) code as a new partially-compatible library (<a href="http://github.com/reedhedges/AriaCoda">AriaCoda</a>) such as modernizing parts of the C++ codebase to C++17, optimizing a key LIDAR data processing component, removing obscolete code, overall optimization (reducing memory allocation and copying), generally improved C++ code robustness, fixed a few bugs, added additional ROSARIA features, and assisted remaining AriaCoda and ROSARIA users.</p>
+
+</div>
+
+<div class="project">
+<h3>MobileSim</h3>
+<img align="right" src="amrisim.png" width="247" height="285" alt="Image of MobileSim showing multiple simulated mobile robots in a 2-D plane" />
+
+
+<p>After 2020, I made various improvements to the MobileSim open source (GPL) code as <a href="http://github.com/reedhedges/AriaCoda">AMRISim</a>) such as adding infrastructure to support multiple interfaces and adding a new ROS interface in addition to the previous Pioneer/ARIA interface, modernizing and optimizing parts of the C++ code fixing bugs and assisting AMRISim users.
+</p>
+</div>
+
+<div class="project">
+<h3>User Documentation</h3>
+<p>Led initiatives to improve, expand and polish customer documentation and manuals.
+<ul>
+<li>Ensured that library APIs used by customers were comprehensively and accuracetly documented with consistent, clear API documentation, example programs, tutorials and knowlege base articles.
+<li>Updated and modernized several existing product user manuals. Added information and diagrams requested by users based on customer support data.
+<li>Co-Authored manuals for two new products including introductory explanations, all reference information, diagrams, schematics and step-by-step instructions, and safety information.
+<li>Helped create manual for a new product variant by adapting existing manual, making accurate changes and adapting scope of information included to fit target market.
+<li>Led the creation of a library of modular short guides for each optional accessory available for products, with key information, quick start guide and links to additional documentation.
+<li>Helped create and later led the maintainaince of a comprehensive online knowlege base of information and infrastructure for distributing above documentation along with software releases and updates.
+<li>Worked with customer support lead to moderate and administer user discussion lists (specific related to development software). 
+<li>Covered for customer support lead on hardware customer problems when neccesary, expanded knowlege of hardware aspects of products.
+<li>Customer documentation was created using Doxygen (API docs), MS Word, Madcap Flare, and ReStructured Text (product manuals and accessory guides), and customized MediaWiki installation (knowlege base and document/software distribution support site.) 
+<li>
+</ul>
+
+<p>Excerpts of the above work are available privately upon request.</p>
+
+<p>A partial archive of the public Omron/Adept MobileRobots support knowlege base and downloads website is available at 
+<a href="https://web.archive.org/web/20180214114520/http://robots.mobilerobots.com/wiki/Main_Page">The Internet Archive</a>
+</p>
+
+</div>
+
+<div class="project">
+<h3>Other</h3>
+</div>
+
+
+</div>
+
+
+<div class="job">
+<h2>As Independent Software Developer</h2>
+
+<div class="project">
+<h3>Map Viewer</h3>
+<h4>In Development</h4>
+<a href="ss-mapview-explained.png">
+<img src="ss-mapview-explained.png" width="832" height="508" />
+</a>
+<img src="ss-mapview-topo.png" width="273" height="508" />
+
+<p>Map and nautical chart viewer with GPS tracking, implemented in C++ and QML/Javascript using Qt 6.x. Intended to be simple and easy to use 
+while hiking, sailing, boating, etc.</p>
+
+<p>Tools used include C++20, CMake, Conan, libfmt, libproj, catch2, Qt6, QtCreator, git, Android Studio, Android NDK</p>
+
+<h5>Implemented:</h5>
+<ul>
+<li>Load and display maps and charts in GeoTIFF or BSB (KAP) file formats.
+<li>Read GPS data and automatically move map image to track position (current location is shown near bottom of view; map moves relative to screen and this position as you move).
+<li>Temporary zoom in/out or set.
+<li>Use GPS positions to calculate course over ground (direction of travel). Automatically rotate map view to orient to coures, show course line and bearing. 
+<li>Automatically determine magnetic compass declination (magnetic variance). 
+<li>Select destination waypoint from list with one click. Highlight destination waypoint on map, display bearing line to destination, angle
+and distance.
+<li>Load waypoints from GPX file.
+<li>Convert and display headings and bearings in degrees relative to both true and magnetic north.
+<li>Display data from GPS and calculated by app in resizable grid view.
+<li>Partial test coverage of some data and navigation calculations, geographic projection,  data logging and other utility classes.
+<li>Runs on Android and Linux.
+<li>Optionally record all data received and calculated to a CSV data log file. 
+</ul>
+
+<h5>In Progress:</h5>
+<ul>
+<li>Additional test coverage.
+<li>Windows Desktop version. 
+<li>Additional data calculations such as VMG, True Wind, etc.
+<li>Use computed true wind direction to compute laylines to waypoint and visualize on map view.
+<li>Read GPS data from network (wifi/ethernet) and Bluetooth interfaces.
+<li>Support additional map file formats (GeoPDF, GeoPNG, GeoJPEG, KML/KMZ with overlay,  etc.)
+<li>Record past track as you move. Save to GPX file. Include positions and any other data selected.
+<li>Improve UI elements: choosing map file(s), viewing/editing waypoints, choosing preferences etc.
+<li>Visualization of GPS position accuracy.
+</ul>
+
+<h5>Future Ideas:</h5>
+<ul>
+<li>Tools to follow route (a sequence of waypoints)
+<li>iOS and MacOS versions.
+<li>"Bare" embedded version for OEM devices.  (QNX, VxWorks and other platforms are also possible.)
+<li>Split screen and other additional features on larger size devices (Desktop, tablets.) 
+<li>Sync data between devices (e.g. Desktop to mobile.)
+<li>Visualization of wind, tide and current, manual approach/guide lines related to specific points. 
+<li>Display AIS data if available via NMEA
+<li>Other features useful for sail boat/yacht racing and cruising.
+<li>Support for vector map data.  
+<li>Simplified visualization of elevation, slope and other terrain information
+<li>Data collection tools such as photos, interconnection with other apps, field notes, etc.
+<li>... plus many more ideas.
+</ul>
+
+</div>
+
+</div>
+
+</body>
 </html>
