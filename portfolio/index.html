@@ -27,23 +27,21 @@ img.border {
   
 <body>
 
+<h1>Project Details</h1>
+
+<center>
+<a href="#current">Current Projects</a> |
+<a href="#mobilerobots">With Omron/Adept MobileRobots</a>
+</center>
 
 <div class="job">
-<h2>With Omron/Adept MobileRobots</h2>
-
-<p>MobileRobots was a business unit of <a href="https://automation.omron.com/en/us/products/category/robotics">Omron Automation</a> (previously owned by <a href="https://en.wikipedia.org/wiki/Omron_Adept">Adept Technology</a>) specializing in providing hardware and software platforms
-used for education and advanced research in mobile robotics.    An archive of the website featuring photos and information on the products
-is availabe via <a href="https://web.archive.org/web/20171221114232/http://www.mobilerobots.com/Mobile_Robots.aspx">The Internet Archive</a>.
-Customizable systems were sold to research universities, institutes, government agencies and private enterprises around the world, and provided
-with comprehensive software libraries and highly regarded personalized customer support.  Omron Industrial Automation closed this business unit and discontinued support
-for all its products in 2018.
-</p>
+<a name="current"></a>
+<h2>Current</h2>
 
 <div class="project">
 <h3>AriaCoda</h3>
-
 <p>
-<a href="http://github.com/reedhedges/AriaCoda">AriaCoda</a> is a fork of the ARIA open source (GPL) library (from Omron/Adept MobileRobots)  Some of the many improvements made include analyzing and testing the code to find and fix bugs, modernizing parts of the C++ codebase to C++17, optimizing a key LIDAR data processing component, removing obscolete code, overall optimization (especially reducing memory allocation and copying).  Code that was only used internally by Adept/Omron was removed. (The ARIA library was used both internally for Omron Automation's industral mobile robot products, and provided directly to research customers as a development SDK.)  A simple continuous integration job was added to perform test builds with various compilers and platforms. (ARIA has never had automatable unit tests; I have added a few but not many yet.)
+<a href="http://github.com/reedhedges/AriaCoda">AriaCoda</a> is a fork of the ARIA open source (GPL) library (from Omron/Adept MobileRobots).  Some of the many improvements made over the original ARIA code include analyzing and testing the code to find and fix bugs, modernizing parts of the C++ codebase to C++17 and refactoring buggy or unsafe implementations of API functions, optimizing a key LIDAR data processing component, removing obsolete code, overall optimization (especially reducing memory allocation and copying).  All warnings and errors revealed by adding extra compilation warning flags and enabling address and UB sanitizers have now been resolved (plus issues indicated by tools such as clang-tidy and cppcheck).  Code that was only used internally by Adept/Omron was removed. (The ARIA library was used both internally for Omron Automation's industral mobile robot products, and provided directly to research customers as a development SDK.)  A simple continuous integration job was added to perform test builds with various compilers and platforms. (ARIA has never had automatable unit tests; I have added a few but not many yet.)
 Some bug fixes and improvements have been done to support users previously using ARIA or who are using ROS with MobileRobots hardware platforms.
 </p>
 
@@ -58,11 +56,11 @@ The AriaCoda Github page can be found <a href="http://github.com/reedhedges/Aria
 </div>
 
 <div class="project">
+<img align="right" src="amrisim.png" width="185" height="213" alt="Screen shot of AMRISim showing multiple simulated mobile robots in a 2-D building plan" />
 <h3>AMRISim</h3>
-<img align="right" src="amrisim.png" width="247" height="285" alt="Screen shot of AMRISim showing multiple simulated mobile robots in a 2-D building plan" />
 
 
-<p><a href="http://github.com/reedhedges/AMRISim">AMRISim</a> is a fork of the open source (GPL) MobileSim mobile robot simulator (from Omron/Adept MobileRobots). I have made various improvements such as adding infrastructure to support multiple interfaces and adding a new ROS interface in addition to the existing Pioneer/ARIA interface, modernizing and optimizing parts of the C++ code, analyzing, testing and fixing bugs (in AMRISim and in C code in the "Stage" simulation engine it is built around) and assisting AMRISim users. (Upgrading to GTK4 was also planned but not yet started.) 
+<p><a href="http://github.com/reedhedges/AMRISim">AMRISim</a> is a fork of the open source (GPL) MobileSim mobile robot simulator (from Omron/Adept MobileRobots). I have made a couple of improvements such as adding infrastructure to support additional client interfaces and adding a new ROS interface in addition to the existing Pioneer/ARIA interface (this allows users to use ARIA, AriaCoda, or ROS1 libraries in their own application code to easily choose, at runtime, to connect that application code to either a real robot or AMRISim via either ARIA, AriaCoda, or ROS), modernizing and optimizing parts of the C++ code, analyzing, testing and fixing bugs (in AMRISim and in C code in the "Stage" simulation engine it is built around). Upgrading from GTK2.x to GTK4 was also planned but not yet started. 
 </p>
 
 <p>
@@ -74,62 +72,10 @@ The AMRISim Github page can be found <a href="http://github.com/reedhedges/AMRIS
 </p>
 </div>
 
-<div class="project">
-<h3>User Documentation</h3>
-<p>At MobileRobots I led several initiatives to improve, expand and polish customer documentation and manuals.
-<ul>
-<li>I ensured that C++ library APIs used by customers were comprehensively and accurately documented with consistent, clear API documentation (using Doxygen to generate documentation), that example programs were useful and easy to understand, and wrote various tutorials and knowlege base articles published on the support website.
-<li>I updated and modernized the existing product user manuals. I added information and diagrams and fixed issues based on customer support feedback.
-<li>I co-authored manuals for two new products including introductory explanations, all reference information, diagrams, schematics and step-by-step instructions, and safety information.
-<li>I helped create the manual for a new product variant by adapting an existing manual, making accurate changes and adapting scope of information included to fit target market.
-<li>Led the creation of a library of modular short guides for each optional accessory available for products, with key information, quick start guide and links to additional documentation.
-<li>Helped create and later led the maintainaince of a comprehensive online knowlege base of information and infrastructure for distributing above documentation along with software releases and updates.
-<li>Worked closely with MobileRobots customer support, hardware engineering, production/assembly, and marketing departments, and Omron/Adept technical documentation and other departments.
-<li>Worked with customer support staff to moderate and administer user discussion lists (specific related to development software). 
-<li>Covered for customer support staff on hardware customer problems when neccesary, expanded knowlege of hardware aspects of products.
-<li>Customer documentation was created using Doxygen (API docs), MS Word, Madcap Flare, and ReStructured Text (product manuals and accessory guides), and customized MediaWiki installation (knowlege base and document/software distribution support site.) 
-</ul>
-
-<div align="center">
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_p3.png" alt="cover of Pioneer 3 mobile robot manual">
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_pioneerlx.png" alt="cover of Pioneer LX mobile robot manual">
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_seekurjr.png" alt="cover of SeekurJr mobile robot robot manual">
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_seekur.png" alt="cover of Seekur mobile robot manual">
-<br>
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_usb.png" alt="first page of USB adapter quick start guide">
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_wibox.png" alt="first page of Wireless interface device quick start guide">
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_ubuntu.png" alt="first page of Ubuntu Linux quick start guide">
-<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_windows.png" alt="first page of Windows OS adapter quick start guide">
-</div>
-
-<p>Excerpts of the above work are available privately upon request.</p>
-
-<p>A partial archive of the public Omron/Adept MobileRobots support knowlege base and downloads website is available at 
-<a href="https://web.archive.org/web/20180214114520/http://robots.mobilerobots.com/wiki/Main_Page">The Internet Archive</a>
-</p>
-
-</div>
-
-<div class="project">
-<h3>Other</h3>
-
-
-<p>
-TODO
-</p>
-
-</div>
-
-
-</div>
-
-
-<div class="job">
-<h2>Other Projects</h2>
 
 <div class="project">
 <h3>Map Viewer</h3>
-<h4>In Development</h4>
+<h4>Unreleased, In Development</h4>
 <a href="ss-mapview-explained.png">
 <img src="ss-mapview-explained.png" width="832" height="508" />
 </a>
@@ -149,7 +95,7 @@ Intended to be simple and easy to use while hiking, sailing, boating, or for sma
 <li>Automatically determine magnetic compass declination (magnetic variance). 
 <li>Select destination waypoint from list with one click. Highlight destination waypoint on map, display bearing line to destination, angle
 and distance.
-<li>Load waypoints from GPX file.
+<li>Load waypoints from GPX (XML format) file.
 <li>Convert and display headings and bearings in degrees relative to both true and magnetic north.
 <li>Display various data (from GPS/mobile device sensors, and calculated by app) in resizable grid view.
 <li>Partial test coverage of some data and navigation calculations, geographic projection,  data logging and other utility classes.
@@ -160,13 +106,13 @@ and distance.
 <h5>In Progress:</h5>
 <ul>
 <li>Easy to understand settings UI.
-<li>Additional test coverage.
+<li>Additional tests with more code coverage.
 <li>Windows Desktop version. 
 <li>Additional data calculations such as VMG, True Wind, etc.
 <li>Use computed true wind direction to compute sailing laylines to waypoint and visualize on map view.
 <li>Read GPS data from network (wifi/ethernet) and Bluetooth interfaces.
 <li>Support additional map file formats (GeoPDF, GeoPNG, GeoJPEG, KML/KMZ with overlay,  etc.)
-<li>Record past track as you move. Save to GPX file. Include positions and any other data selected.
+<li>Record past track as you move. Save to GPX (XML format) file. Include positions and any other data selected.
 <li>Improve UI elements: choosing map file(s), viewing/editing waypoints, choosing preferences etc.
 <li>Visualization of GPS position accuracy.
 </ul>
@@ -190,14 +136,89 @@ and distance.
 </div>
 
 <div class="project">
-<h3>Other Projects</h3>
+<h3>Simple Weather Forecast app</h3>
+
+<p>Android application that combines 10-day and hourly weather forecast data from National Weather Service API in a simple, easy to read format.  Used Qt and QML; planned to be rewritten in web-based UI framework (e.g. ReactNative, Svelte or Vue.js with NativeScript), or Dart with Flutter.
+</p>
+</div>
+
+<div class="project">
+<h3>Future Projects</h3>
 
 <p>
-I am also currently learning and evaluating Svelte with NativeScript, Vue.js with NativeScript and Flutter as platforms for two 
-other mobile applications.
+I am also currently learning and evaluating Svelte with NativeScript, Vue.js with NativeScript and Flutter as platforms for 
+other possible mobile applications.
 </p>
 
 </div>
+
+</div>
+
+
+<hr>
+
+
+<div class="job">
+<a name="mobilerobots"></a>
+<h2>With Omron/Adept MobileRobots</h2>
+
+<p>MobileRobots was a business unit of <a href="https://automation.omron.com/en/us/products/category/robotics">Omron Automation</a> (previously owned by <a href="https://en.wikipedia.org/wiki/Omron_Adept">Adept Technology</a>) specializing in providing hardware and software platforms
+used for education and advanced research in mobile robotics.    An archive of the website featuring photos and information on the products
+is availabe via <a href="https://web.archive.org/web/20171221114232/http://www.mobilerobots.com/Mobile_Robots.aspx">The Internet Archive</a>.
+Customizable systems were sold to research universities, institutes, government agencies and private enterprises around the world, and provided
+with comprehensive software libraries and highly regarded personalized customer support.  Omron Industrial Automation closed this business unit and discontinued support
+for all its products in 2018.
+</p>
+
+<!-- div class="project"> <h3>ARIA</h3> </div -->
+
+
+<!-- div class="project"> <h3>MobileSim</h3> </div -->
+
+<!-- div class="project"> <h3>Builds</h3></div -->
+
+<!-- div class="project"> <h3>Other</h3> </div -->
+
+<div class="project">
+<h3>User Documentation</h3>
+<p>At MobileRobots I led several initiatives to improve, expand and polish customer documentation and manuals.
+<ul>
+<li>I ensured that C++ library APIs used by customers were comprehensively and accurately documented with consistent, clear API documentation (using Doxygen to generate documentation), that example programs were useful and easy to understand, and wrote various tutorials and knowlege base articles published on the support website.
+<li>I updated and modernized the existing product user manuals. I added information and diagrams and fixed issues based on customer support feedback.
+<li>I co-authored manuals for two new products including introductory explanations, all reference information, diagrams, schematics and step-by-step instructions, and safety information.
+<li>I helped create the manual for a new product variant by adapting an existing manual, making accurate changes and adapting scope of information included to fit target market.
+<li>Led the creation of a library of modular short guides for each optional accessory available for products, with key information, quick start guide and links to additional documentation.
+<li>Helped create and later led the maintainaince of a comprehensive online knowlege base of information and infrastructure for distributing above documentation along with software releases and updates. (Based on MediaWiki with some customizations, e.g. to automate page changes as part of software package release workflow.) 
+<li>Worked closely with MobileRobots customer support, hardware engineering, production/assembly, and marketing departments, and Omron/Adept technical documentation and other departments.
+<li>Worked with customer support staff to moderate and administer user discussion lists (specific related to development software). 
+<li>Covered for customer support staff on hardware customer problems when neccesary, expanded knowlege of hardware aspects of products.
+<li>Customer documentation was created using Doxygen (API docs), MS Word, Madcap Flare, and ReStructured Text (product manuals and accessory guides), and customized MediaWiki installation (knowlege base and document/software distribution support site.) 
+</ul>
+
+<p>Copies and excerpts from these manuals and documents are available privately upon request.</p>
+
+<div align="center">
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_p3.png" alt="cover of Pioneer 3 mobile robot manual">
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_pioneerlx.png" alt="cover of Pioneer LX mobile robot manual">
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_seekurjr.png" alt="cover of SeekurJr mobile robot robot manual">
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_seekur.png" alt="cover of Seekur mobile robot manual">
+<br>
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_usb.png" alt="first page of USB adapter quick start guide">
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_wibox.png" alt="first page of Wireless interface device quick start guide">
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_ubuntu.png" alt="first page of Ubuntu Linux quick start guide">
+<img class="border" width="200" height="259" src="amr_docs_first_pages/sm_windows.png" alt="first page of Windows OS adapter quick start guide">
+</div>
+
+
+<p>A partial archive of the public Omron/Adept MobileRobots support knowlege base and downloads website is available at 
+<a href="https://web.archive.org/web/20180214114520/http://robots.mobilerobots.com/wiki/Main_Page">The Internet Archive</a>
+</p>
+
+</div>
+
+
+</div>
+
 
 </div>
 
