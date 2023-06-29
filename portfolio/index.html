@@ -89,10 +89,10 @@ Intended to be simple and easy to use while hiking, sailing, boating, or for sma
 
 <h5>Implemented:</h5>
 <ul>
-<li>Load and display maps and charts in various raster file formats including GeoTIFF or BSB (KAP) files.
+<li>Load and display maps and charts in various raster file formats including GeoTIFF or BSB (KAP) files (temporary implementation for testing).
 <li>Read GPS data and automatically move map image to track position (current location is shown near bottom of view; map moves relative to screen and this position as you move).
 <li>Temporary zoom in/out or set zoom.
-<li>Use GPS position history to calculate course over ground (averaged direction of travel).  Automatically rotate map view to orient to current course over ground, show course line and bearing. 
+<li>Initial (rudimentary) course over ground calculation using GPS position history.  Automatically rotate map view to orient to current course over ground, show course line and bearing. 
 <li>Automatically determine magnetic compass declination (magnetic variance). 
 <li>Select destination waypoint from list with one click. Highlight destination waypoint on map, display bearing line to destination, angle
 and distance.
@@ -104,18 +104,19 @@ and distance.
 <li>Optionally record all data received and calculated to a CSV data log file. 
 </ul>
 
-<h5>In Progress:</h5>
+<h5>In Progress/Next:</h5>
 <ul>
-<li>Easy to understand settings UI.
+<li>Better course-over-ground calculation with reusable position history utility.
+<li>Use QtDesigner to design a settings UI page (and add more features to waypoints list page.) 
 <li>Additional tests with more code coverage.
 <li>Windows Desktop version. 
 <li>Additional data calculations such as VMG, True Wind, etc.
 <li>Use computed true wind direction to compute sailing laylines to waypoint and visualize on map view.
 <li>Read GPS data from network (wifi/ethernet) and Bluetooth interfaces.
-<li>Support additional map file formats (GeoPDF, GeoPNG, GeoJPEG, KML/KMZ with overlay,  etc.)
+<li>Support additional map file formats (GeoPDF, GeoPNG, GeoJPEG, KML/KMZ with overlay, etc.) via GDAL.
 <li>Record past track as you move. Save to GPX (XML format) file. Include positions and any other data selected.
 <li>Improve UI elements: choosing map file(s), viewing/editing waypoints, choosing preferences etc.
-<li>Visualization of GPS position accuracy.
+<li>Nice visualization of GPS position accuracy.
 </ul>
 
 <h5>Future Ideas:</h5>
