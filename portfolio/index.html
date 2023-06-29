@@ -171,14 +171,98 @@ with comprehensive software libraries and highly regarded personalized customer 
 for all its products in 2018.
 </p>
 
-<!-- div class="project"> <h3>ARIA</h3> </div -->
+<div class="project"> <h3>ARIA</h3> 
+<p>ARIA was the core library used to integrate mobile robotic systems
+and implement applications with Omron/Adept MobileRobots platforms.
+It was used internally to help implement the core robotics application
+(configurable autonomous mobile robot motion and behavior.) and provided
+to R&amp;D customers as an SDK to help develop their own applications.
+It provided a C++ API for controlling the mobile robot and its components, and
+for receiving data from the mobile robot and various sensors. It also
+provided utilities and building blocks generally useful in robotics.
+</p>
+
+<p>
+Development of ARIA was begun around 2003, and so over the years retained many
+legacy attributes of older C++ code.  Later, some of this (but not all) was
+improved upon in my AriaCoda fork (see above). 
+</div>
 
 
-<!-- div class="project"> <h3>MobileSim</h3> </div -->
+<div class="project"> <h3>MobileSim</h3> 
+<p>MobileSim was an abstract simulator for multiple mobile robots in 
+a two dimensional environment. Simulated sensors returned realistic sensor
+data based on the simulated robot's position with respect to walls and other
+obstacles defined in the environment, and the robot moved in the environment
+when commanded similar to the real robot (using parameters provided using the same configuration files used in ARIA).</p>
 
-<!-- div class="project"> <h3>Builds</h3></div -->
+<p>MobileSim included its own implementation of the same interface protocol that
+applications (via ARIA) used to communicate with a real robot platform.
+ARIA automatically detects whether MobileSim (or later, AMRISim) is running
+and simply uses the simulator's TCP port instead of the real robot's serial
+port.  MobileSim included my own "clean room" re-implementation of the interface,
+since it was released as open source code, with compatibility verified through testing. MobileSim also extended this protocol with additional features.
+</p>
 
-<!-- div class="project"> <h3>Other</h3> </div -->
+<p>See also my AMRISim fork of MobileSim, described above.</p>
+
+</div>
+
+<div class="project">
+<h3>ROS and Gazebo support</h3>
+
+<p><a href="https://www.ros.org/">ROS (Robot Operating System)</a> is
+an open source project that around 2010 began to emerge as a popular
+framework for robotic software development in academia, especially for mobile
+robots.   Therefore it eventually became an important ecosystem to support
+and participate in.  (This is something I and some other engineers
+ identified and began discussions about within MobileRobots.)    I did
+this by partnering with customers at the University of Zagreb, Croatia,
+who had already begun developing <a href="https://github.com/amor-ros-pkg/rosaria">a ROS package to support our products</a>.
+I improved the documentation, including a detailed tutorial, and contributed some fixed and feature improvements; later, when the original maintainers had moved on, I took over maintainence
+of the package, managing contributions from some users and answering questions.   
+One project performed by summer college interns whom I supervised, was to test and improve our ROS support with features, example code, as they designed and constructed their own ROS-based application.
+</p>
+
+<p>
+I also created <a href="https://github.com/MobileRobots/amr-ros-config">a package of configuration support</a> 
+which could be used by MobileRobots product users, including 3D graphical models and physical parameter definitions (URDF files) of the various MobileRobots products which could be used
+by other ROS components and by the Gazebo simulator (which features 3D space
+and game-like physical interaction simulation.)   I did this by combining originar engineering CAD information, my own design, and physical testing to verify various parameters.  
+</p>
+
+<p>Finally, I also created <a href="https://github.com/MobileRobots/ros-arnl">a ROS component</a> that provided a high level API 
+for interacting with our robust, proprietary, autonomous nagivation implementation,
+so that users could incorporate that into their ROS-based system design as well.
+</p>
+
+
+</div>
+
+
+<div class="project">
+<h3>Misc Device Support</h3>
+<p>
+As part of our highly customizable mobile robot products, we would frequently integrate third party devices such as sensors and actuators. I was responsible, along with an electrical/mechanical systems integration engineer, for evaluation of potential third party integrations, and if a product was chosen for integration, determine the appropriate level (i.e. my time and effort) for initial software support, and plan for any future development.    (Sometimes, only a few third party device units would end up sold, while some would become popular and frequent additions to a customer system.)
+</p>
+
+<p>For some devices, I created a C++ wrapper library with improved, easy to use API around the vendor-supplied C library or example code, or around other available open source libraries or Linux driver interfaces (with instructions on how to install and configure required Linux and/or Windows drivers, libraries, etc.).    For others, I 
+simply implemented the device communications protocol according to documentation/specification, and included it in ARIA (e.g. GPS receivers via NMEA protocol) or in a separate support library. (When similar ARIA integrations were done by other Adept/MobileRobots developers, I would sometimes contribute documentation, examples and tests.)   Or sometimes, I created a fork of a third party open source library with minor fixes, example code, documentation, or improvements for easier use by our customers.</p>
+
+<p>A few examples using open source code can be found at <a href="https://github.com/MobileRobots">https://github.com/MobileRobots</a>. Some others were not released as open source code and are no longer available.</p>
+
+</div>
+
+<div class="project">
+<h3>Demos</h3>
+
+<p>I would occasionally create a product demo to display at trade conferences.
+The most recent demo featured a robot with two manipulator arms, and a Microsoft XBox Kinect sensor mounted on a pan/tilt unit.  In the demo, the mobile robot would autonomously drive a route around the exhibition floor (avoiding people and other obstacles) using Omron/Adept's autonomous navigation implementation.  When it returned to our table, it would stop and move the manipulator arms (in a predetermined sequence).  Monitoring software running on a laptop (connected to the robot over wifi) showed the position of the robot, and visualization of sensor data including point cloud of obstacles detected by lidar, filtered point cloud derived by processing the Kinect depth data, and remotely fetched video stream showing RGB and depthmap data from the Kinect as images (using OpenCV to convert the image formats). Remote control, configuration and monitoring of system performance data was also possible.  (Some of the code used in this demo can be found at <a href="https://github.com/MobileRobots/pioneer-lx-manipulator-demo">pioneer-lx-manipulator-demo</a> and <a href="https://github.com/MobileRobots/KinectArVideoServer">KinectArVideoServer</a>.  This was implemented in the robot as a distributed system on two computers, one lower power computer performing autonomous control of the robot, and a second computer with a basic GPU capable of doing some of the Kinect depth map processing, and control of the manipulator arms.
+</p>
+
+<p>This robot configuration was sold as a special package, in which I assisted in overall design, as well as putting together documentation and example configuration (e.g. Linux network configuration, example ROS configuration, etc.)
+</p>
+</div>
 
 <div class="project">
 <h3>User Documentation</h3>
@@ -190,6 +274,8 @@ for all its products in 2018.
 <li>I helped create the manual for a new product variant by adapting an existing manual, making accurate changes and adapting scope of information included to fit target market.
 <li>Led the creation of a library of modular short guides for each optional accessory available for products, with key information, quick start guide and links to additional documentation.
 <li>Helped create and later led the maintainaince of a comprehensive online knowlege base of information and infrastructure for distributing above documentation along with software releases and updates. (Based on MediaWiki with some customizations, e.g. to automate page changes as part of software package release workflow.) 
+A partial archive of this site is available at 
+<a href="https://web.archive.org/web/20180214114520/http://robots.mobilerobots.com/wiki/Main_Page">The Internet Archive</a>.  Topics in this knowlege based ranged from answers to frequently asked questions, step-by-step tutorials and guides for certain tasks, how to troubleshoot common software, computer OS and eletrical problems, how to configure Windows or Linux to work with various hardware devices, technical details of the robot hardware and electronic features, archives of all current and past manuals for robots and third party devices, pages from which users could download our software packages, and third party software and drivers, news, links to join email discussion lists, and a form to contact technical support.  
 <li>Worked closely with MobileRobots customer support, hardware engineering, production/assembly, and marketing departments, and Omron/Adept technical documentation and other departments.
 <li>Worked with customer support staff to moderate and administer user discussion lists (specific related to development software). 
 <li>Covered for customer support staff on hardware customer problems when neccesary, expanded knowlege of hardware aspects of products.
