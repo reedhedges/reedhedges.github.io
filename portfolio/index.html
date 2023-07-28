@@ -59,7 +59,7 @@
       </li>
       <li><a href="https://github.com/reedhedges/libwmm">libwmm, simple C++ wrapper around legacy C code</a> (soon to be
         converted to C++20 module and other changes)</li>
-      <li>From ARIA and <a href="https://github.com/reedhedges/AriaCoda">AriaCoda</a> (See below for description of AriaCoda):
+      <li>From ARIA and <a href="https://github.com/reedhedges/AriaCoda">AriaCoda</a> (See below for description of AriaCoda; Note that ARIA has specific code style requirements, it uses mostly C++03 with some C++11/14 features also used. AriaCoda inherited most of those and uses only C++14 and prior features to support old platforms):
         <ul>
           <li>GPS support interface (added to Aria library following established code style requirements, conventions,
             and library infrastructure):
@@ -126,7 +126,7 @@
       <p>
         <a href="http://github.com/reedhedges/AriaCoda">AriaCoda</a> is a fork of the ARIA open source (GPL) library
         (from Omron/Adept MobileRobots). Some of the many improvements made over the original ARIA code include
-        analyzing and testing the code to find and fix bugs, modernizing parts of the C++ codebase (still conforms to
+        analyzing and testing the code to find and fix bugs, modernizing some parts of the C and C++03-based code (still conforms to
         C++14, however, for compatibility with old compilers sometimes required by users) and refactoring buggy or
         unsafe implementations of API functions, optimizing a key LIDAR data processing component, removing obsolete
         code, overall optimization (especially reducing memory allocation and copying). All warnings and errors revealed
